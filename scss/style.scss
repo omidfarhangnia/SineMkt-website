@@ -1,6 +1,17 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+$font-family: 'roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+@mixin font-data ($font-weight, $font-size: 1rem){
+    font: {
+        family: $font-family;
+        weight: $font-weight;
+    }
+    font-size: $font-size;
+}
+@mixin reset-button{
+    background: transparent;
     margin: 0;
     padding: 0;
+    border: 0;
 }
-
 @import "nav.scss";
+@import "reset.scss";
