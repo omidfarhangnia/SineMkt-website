@@ -8,6 +8,11 @@ $orange-color: #e99c2e;
     justify-content: space-around;
     align-items: center;
     padding: 1.5rem;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 1;
     .burger_menu{
         display: inline-flex;
         width: 4rem;
