@@ -4,6 +4,11 @@
   justify-content: space-around;
   align-items: center;
   padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 1;
 }
 .page_header .burger_menu {
   display: inline-flex;
@@ -33,6 +38,7 @@
   font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   font-size: 2.2rem;
+  color: #000000;
 }
 .page_header #page_logo .logo_text--gray {
   color: #616060;
@@ -54,6 +60,7 @@
   font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   font-size: 1rem;
+  color: #000000;
   padding: 0 1.3rem;
   color: #616060;
   text-transform: capitalize;
@@ -132,6 +139,7 @@
   font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
   font-size: 2rem;
+  color: #000000;
   color: #616060;
 }
 .page_header .page_offcanvas--open {
@@ -173,5 +181,184 @@ html {
 @media (min-width: 1200px) {
   html {
     font-size: 20px;
+  }
+}
+.slider .carousel-item {
+  padding: 5vh 3vh;
+  box-sizing: border-box;
+}
+.slider .carousel-item .slider__heading4 {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #998d80;
+  margin-bottom: 1.3rem;
+}
+.slider .carousel-item .slider__heading2 {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 2.8rem;
+  color: #616060;
+  margin-bottom: 1.3rem;
+}
+.slider .carousel-item .slider__introduction {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #998d80;
+  text-align: justify;
+}
+.slider .carousel-item .slider__price {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #616060;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.slider .carousel-item .slider__price span {
+  display: inline-block;
+}
+.slider .carousel-item .slider__price .current__price {
+  margin-left: 4rem;
+  position: relative;
+}
+.slider .carousel-item .slider__price .current__price::before {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 3px;
+  background: rgba(97, 96, 96, 0.7137254902);
+  left: -3.5rem;
+  top: calc(50% - 3px);
+}
+.slider .carousel-item .slider__price .pervious__price {
+  margin-left: 2.5rem;
+  text-decoration: line-through 3px rgba(97, 96, 96, 0.7137254902);
+}
+.slider .carousel-item .button__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.slider .carousel-item .button__container--more, .slider .carousel-item .button__container--add {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #000000;
+  padding: 0.5rem 0;
+  transition: 0.4s;
+}
+.slider .carousel-item .button__container--add {
+  background: #e99c2e;
+  color: #ffffff;
+}
+.slider .carousel-item .button__container--add:hover {
+  background: #ffffff;
+  color: #e99c2e;
+}
+.slider .carousel-item .button__container--more {
+  color: #e99c2e;
+}
+.slider .carousel-item .button__container--more:hover {
+  background: #e99c2e;
+  color: #ffffff;
+}
+.slider .carousel-item .slider__image {
+  width: 80%;
+  object-fit: contain;
+  margin: 10%;
+}
+@media (min-width: 768px) {
+  .slider .carousel-item[class*=active] {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .slider .carousel-item[class*=active] .slider__data {
+    width: 50%;
+  }
+  .slider .carousel-item[class*=active] .slider__data .slider__heading4 {
+    font-size: 32px;
+  }
+  .slider .carousel-item[class*=active] .slider__data .slider__heading2 {
+    font-size: 44.8px;
+  }
+  .slider .carousel-item[class*=active] .slider__data .slider__introduction {
+    font-size: 24px;
+  }
+  .slider .carousel-item[class*=active] .slider__data .slider__price {
+    font-size: 20.8px;
+  }
+  .slider .carousel-item[class*=active] .slider__image {
+    width: 45%;
+    max-width: 400px;
+    margin: 0;
+  }
+  .slider .carousel-item[class*=active] .button__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .slider .carousel-item[class*=active] .button__container--more, .slider .carousel-item[class*=active] .button__container--add {
+    width: 40%;
+    text-align: center;
+  }
+}
+
+.carousel-indicators {
+  bottom: -2rem !important;
+}
+.carousel-indicators button:nth-child(odd) {
+  background: #e99c2e;
+}
+.carousel-indicators button:nth-child(even) {
+  background: #998d80;
+}
+
+.slider__heading4, .slider__heading2, .slider__introduction, .slider__price, .slider__image, .button__container {
+  translate: 0 50px;
+  opacity: 0.3;
+}
+
+.slider__heading4 {
+  animation: slider-animation 1s 1 ease-out both;
+  animation-delay: 0.2s;
+}
+
+.slider__heading2 {
+  animation: slider-animation 1s 1 ease-out both;
+  animation-delay: 0.4s;
+}
+
+.slider__introduction {
+  animation: slider-animation 1s 1 ease-out both;
+  animation-delay: 0.6s;
+}
+
+.slider__price {
+  animation: slider-animation 1s 1 ease-out both;
+  animation-delay: 0.8s;
+}
+
+.button__container {
+  animation: slider-animation 1s 1 ease-out both;
+  animation-delay: 1s;
+}
+
+.slider__image {
+  animation: slider-animation 1s 1 ease-out both;
+  animation-delay: 1.2s;
+}
+
+@keyframes slider-animation {
+  100% {
+    translate: 0;
+    opacity: 1;
   }
 }
