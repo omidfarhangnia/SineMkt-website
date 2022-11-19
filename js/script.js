@@ -1,3 +1,9 @@
+// receiving data from RAW
+fetch("https://raw.githubusercontent.com/omidfarhangnia/SineMkt-website/main/js/data/new_arriavls.json")
+.then((response) => response.json())
+.then((data) => {
+    makeResultReady(data);
+})
 // adding offcanvas elements
 
 const BURGER_MENU = document.querySelector(".burger_menu");
@@ -23,3 +29,31 @@ function offcanvas_changes(change){
         PAGE_OFFCANVAS.setAttribute("is-open", false);
     }
 }
+
+// adding goods from json file(local server)
+
+function makeResultReady(data){
+    let result = `<h2 class="new__arrivals--header">new arrivals</h2>`;
+    for(member of data){
+        var memberIsSale = member.isSale;
+        var memberSaleSituation = member.sale_situation;
+        result += `
+            <div class="commodity__container${memberIsSale === false ? '' : memberSaleSituation === "green" ? " green__sale" : " brown__sale"}">
+                <div class="commodity--img">
+                    <img src="${member.img_path}" alt="">
+                </div>
+                <h4>${member.commodity_name}</h4>
+                <p>${member.commodity_price}</p>
+            </div> 
+        `;
+    }
+    console.log(result);
+}
+
+// <div class="commodity__container">
+// <div class="commodity--img">
+//     <img src="./image/new arrivals/arm-chair.png" alt="">
+// </div>
+// <h4></h4>
+// <p></p>
+// </div> 
