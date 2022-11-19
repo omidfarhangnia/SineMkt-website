@@ -123,7 +123,6 @@
         background: #998d80;
     }
 }
-
 $carousel-element: "slider__heading4", "slider__heading2", "slider__introduction", "slider__price", "button__container", "slider__image"; 
 #{selector.append(".slider", "__heading4, __heading2, __introduction, __price, __image"),}, .button__container{
     translate: 0 50px;
@@ -140,5 +139,116 @@ $carousel-element: "slider__heading4", "slider__heading2", "slider__introduction
     100%{
         translate: 0;
         opacity: 1;
+    }
+}
+// latest design
+.latest__goods{
+    $light-gray: #a09e9c;
+    $dark-gray: #616060;
+    width: 90%;
+    margin: 0 auto;
+    margin: {
+        top: 4rem;
+        bottom: 4rem;
+    };
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    &--boxes{
+        padding: 4rem 0;
+        background: #f8f9fc;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img[class *= "boxes__image"]{
+            width: 50%;
+            object-fit: contain;
+        }
+        a{
+            text-decoration: none;
+            .boxes--headers{
+                margin: 2.5rem 0;
+                @include font-data(500, 2.2rem, $dark-gray);
+                transition: .5s;
+                text-align: center;
+                &:hover{
+                    color: #e99c2e;
+                    transition: .5s;
+                }
+            }
+        }
+        .boxes__text{
+            @include font-data(300, 1.4rem, $light-gray);
+            margin: 0 3rem;
+            text-align: center;
+        }
+        .middle__box__price{
+            margin: 2rem 0;
+            text-align: center;
+            @include font-data(500, 1.8rem, darken($light-gray, 40%));
+        }
+        .middle__box__button{
+            @include reset-button;
+            @include font-data(700, 1.8rem, darken($light-gray, 20%));
+            display: block;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            border: 2px solid darken($light-gray, 40%);
+        }
+    }
+    @media (min-width: 500px) {
+        &--boxes{
+            max-width: 500px;
+            img[class *= "boxes__image"]{
+                width: 30%;
+                object-fit: contain;
+            }
+        }
+    }
+    @media (min-width: 1200px) {
+        flex-direction: row;
+        justify-content: space-between;
+        &--boxes{
+            min-height: 430px;
+            width: 32%;
+            a{
+                .boxes--headers{
+                    font-size: 1.3rem;
+                    margin: 1rem 0;
+                }
+            }
+            .boxes__text{
+                font-size: 1rem;
+            }
+            .middle__box__price{
+                font-size: 1rem;
+                margin: 1rem 0;
+            }
+            .middle__box__button{
+                font-size: 1rem;
+                padding: .5rem 1rem;
+            }
+            img[class *= "boxes__image"]{
+                width: 40%;
+                min-height: 130px;
+            }
+        }
+        .center__box{
+            width: 45%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            img{
+                width: 30%;
+            }
+            div{
+                width: 60%;
+            }
+        }
+        .last__box{
+            padding: 0;
+        }
     }
 }
