@@ -1,0 +1,58 @@
+[
+    {
+        "commodity_name": "Wooden Chair",
+        "commodity_price": "$65.00",
+        "isSale": true,
+        "sale_situation": "brown",
+        "img_path": "./image/new arrivals/wooden-chair"
+    },
+    {
+        "commodity_name": "Single Armchair",
+        "commodity_price": "$80.00",
+        "isSale": true,
+        "sale_situation": "green",
+        "img_path": "./image/new arrivals/single-armchair"
+    },
+    {
+        "commodity_name": "Wooden Armchair",
+        "commodity_price": "$40.00",
+        "isSale": false,
+        "sale_situation": null,
+        "img_path": "./image/new arrivals/wooden-armchair"
+    },
+    {
+        "commodity_name": "Stylish Chair",
+        "commodity_price": "$100.00",
+        "isSale": true,
+        "sale_situation": "brown",
+        "img_path": "./image/new arrivals/stylish-chair"
+    },
+    {
+        "commodity_name": "Modern Chair",
+        "commodity_price": "$120.00",
+        "isSale": false,
+        "sale_situation": null,
+        "img_path": "./image/new arrivals/modern-chair"
+    },
+    {
+        "commodity_name": "Mapple Wood Dinning Table",
+        "commodity_price": "$140.00",
+        "isSale": true,
+        "sale_situation": "brown",
+        "img_path": "./image/new arrivals/mapple-dining.png"
+    },
+    {
+        "commodity_name": "Arm Chair",
+        "commodity_price": "$90.00",
+        "isSale": true,
+        "sale_situation": "green",
+        "img_path": "./image/new arrivals/arm-chair"
+    },
+    {
+        "commodity_name": "Wooden Bed",
+        "commodity_price": "$140.00",
+        "isSale": false,
+        "sale_situation": null,
+        "img_path": "./image/new arrivals/wooden-bed"
+    }
+]
