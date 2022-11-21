@@ -1,0 +1,30 @@
+[
+    {
+        "title": "designed sofa",
+        "price": "$160.00",
+        "review_num": "45",
+        "starts": 4,
+        "path": "../image/featrued products/chair and table.jpg"
+    },
+    {
+        "title": "dinning table",
+        "price": "$200.00",
+        "review_num": "32",
+        "starts": 5,
+        "path": "../image/featrued products/designed sofa.jpg"
+    },
+    {
+        "title": "chair and table",
+        "price": "$100.00",
+        "review_num": "26",
+        "starts": 2,
+        "path": "../image/featrued products/dinning table.jpg"
+    },
+    {
+        "title": "modern arm chair",
+        "price": "$299.00",
+        "review_num": "64",
+        "starts": 4,
+        "path": "../image/featrued products/modern arm chair.jpg"
+    }
+]
