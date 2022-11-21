@@ -1,15 +1,23 @@
 // receiving data from RAW
+// new arrivals
 fetch("https://raw.githubusercontent.com/omidfarhangnia/SineMkt-website/main/js/data/new_arriavls.json")
 .then((response) => response.json())
 .then((data) => {
-    makeResultReady(data);
+    showNewArrivalResult(data);
+})
+// featured products
+fetch("https://raw.githubusercontent.com/omidfarhangnia/SineMkt-website/main/js/data/featured_products.json")
+.then(response => response.json())
+.then(data => {
+    showFeaturedProductsResult(data);
 })
 // adding offcanvas elements
 const BURGER_MENU = document.querySelector(".burger_menu");
 const EXIT_OFFCANVAS = document.querySelector(".page_offcanvas");
 const PAGE_OFFCANVAS = document.querySelector(".page_offcanvas");
-// adding data connection elements
-const NEW__ARRIVALS = document.querySelector(".new__arrivals");
+// adding data to page as element
+const NEW__ARRIVALS__CARDS__CONTAINER = document.querySelector(".new__arrivals__cards__container");
+const FEATURED__PRODUCT__CARDS__CONTAINER = document.querySelector(".featured__product__cards__container");
 
 // adding offcanvas script
 BURGER_MENU.addEventListener("click", () => {
@@ -29,10 +37,9 @@ function offcanvas_changes(change){
         PAGE_OFFCANVAS.setAttribute("is-open", false);
     }
 }
-
 // adding goods from json file(local server)
-function makeResultReady(data){
-    let result = `<h2 class="new__arrivals--header">new arrivals</h2>`;
+function showNewArrivalResult(data){
+    let result = ``;
     for(member of data){
         var memberIsSale = member.isSale;
         var memberSaleSituation = member.sale_situation;
@@ -59,13 +66,71 @@ function makeResultReady(data){
             </div> 
         `;
     }
-    NEW__ARRIVALS.innerHTML = result;
+    NEW__ARRIVALS__CARDS__CONTAINER.innerHTML = result;
+}
+function showFeaturedProductsResult(data){
+    let result = ``;
+    for(member of data){
+        let starts_element = giveStarts(member.starts)
+        result += `
+        <div class="card__container">
+            <div class="card__container--card">
+                <div class="card--image">
+                    <img src="${member.path}">
+                </div>
+                <div class="card--rank">
+                    <span class="rank--stars">${starts_element}</span>
+                    <span class="rank--reviews">${member.review_num}</span>
+                </div>
+                <a><h5 class="card--header">${member.title}</h5></a>
+                <p class="card--price">${member.price}</p>
+            </div>
+        </div>`
+    }
+    FEATURED__PRODUCT__CARDS__CONTAINER.innerHTML = result;
 }
 
-// <div class="commodity__container">
-// <div class="commodity--img">
-//     <img src="./image/new arrivals/arm-chair.png" alt="">
-// </div>
-// <h4></h4>
-// <p></p>
-// </div> 
+function giveStarts(starts_num){
+    let result = ``;
+    for(var i = 0; i < starts_num; i++){
+        // add starts fill icon
+        result += `
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+        </svg>
+        `
+    }
+    if(starts_num != 5){
+        var empty_stars = 5 - starts_num;
+        for(var i = 0; i < empty_stars; i++){
+            result += `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+              <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+            </svg>
+            `
+        }
+    }
+    return result;
+}
+
+{/* <div class="card__container">
+<div class="card__container--card">
+    <div class="card--image"></div>
+    <div class="card--rank">
+        <span class="rank--stars"></span>
+        <span class="rank--reviews"></span>
+    </div>
+    <a><h5 class="card--header"></h5></a>
+    <p class="card--price"></p>
+</div>
+</div> */}
+
+// fill start
+{/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg> */}
+
+// mt start
+{/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+  <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+</svg> */}
