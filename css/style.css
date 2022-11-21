@@ -526,40 +526,42 @@ ul {
     rotate: 360deg;
   }
 }
-.placeholder-glow[class*=card-title] {
-  text-align: center;
-}
-.placeholder-glow[class*=card-title] span {
-  height: 3rem;
-}
-
-.placeholder-glow[class*=card-text] {
-  text-align: center;
-}
-.placeholder-glow[class*=card-text] span {
-  height: 1.5rem;
-  margin: 2rem 0;
-}
-
-.new__arrivals {
+.featured__section, .new__arrivals {
   padding: 4rem 0 3rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.new__arrivals .new__arrivals--header {
+
+.featured__section--header, .new__arrivals--header {
   font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 600;
-  font-size: 3rem;
+  font-size: 2.8rem;
   color: #5f5b57;
   text-align: center;
   margin: 4rem 0;
   width: 100%;
+  text-transform: capitalize;
 }
-.new__arrivals .card, .new__arrivals .commodity__container {
+
+.featured__section .card, .new__arrivals .card, .new__arrivals .commodity__container {
   width: 80%;
   max-width: 300px;
   margin: 0 3rem 3rem 3rem;
+}
+
+.new__arrivals .card .placeholder-glow[class*=card-title], .new__arrivals .commodity__container .placeholder-glow[class*=card-title] {
+  text-align: center;
+}
+.new__arrivals .card .placeholder-glow[class*=card-title] span, .new__arrivals .commodity__container .placeholder-glow[class*=card-title] span {
+  height: 3rem;
+}
+.new__arrivals .card .placeholder-glow[class*=card-text], .new__arrivals .commodity__container .placeholder-glow[class*=card-text] {
+  text-align: center;
+}
+.new__arrivals .card .placeholder-glow[class*=card-text] span, .new__arrivals .commodity__container .placeholder-glow[class*=card-text] span {
+  height: 1.5rem;
+  margin: 2rem 0;
 }
 .new__arrivals .commodity__container .commodity--img {
   display: flex;
@@ -800,4 +802,15 @@ ul {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.featured__section .card .card-body .card-text, .featured__section .card .card-body .card-title {
+  text-align: center;
+}
+.featured__section .card .card-body .card-text {
+  margin-top: 2rem;
+}
+.featured__section .card .card-body .card-text span {
+  display: inline-block;
+  margin: 0.5rem 0;
 }

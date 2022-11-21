@@ -155,34 +155,44 @@ $dark-gray: #616060;
         rotate: 360deg;
     }
 }
-.placeholder-glow[class *= "card-title"]{
-    text-align: center;
-    span{
-        height: 3rem;
-    }
-}
-.placeholder-glow[class *= "card-text"]{
-    text-align: center;
-    span{
-        height: 1.5rem;
-        margin: 2rem 0;
-    }
-}
-.new__arrivals{
+%placeholder {
     padding: 4rem 0 3rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    .new__arrivals--header{
-        @include font-data(600, 3rem, #5f5b57);
-        text-align: center;
-        margin: 4rem 0;
-        width: 100%;
+}
+%placeholder--header{
+    @include font-data(600, 2.8rem, #5f5b57);
+    text-align: center;
+    margin: 4rem 0;
+    width: 100%;
+    text-transform: capitalize;
+}
+%placeholder--card{
+    width: 80%;
+    max-width: 300px;
+    margin: 0 3rem 3rem 3rem;
+}
+.new__arrivals{
+    @extend %placeholder;
+    &--header{
+        @extend %placeholder--header;
     }
     .card, .commodity__container {
-        width: 80%;
-        max-width: 300px;
-        margin: 0 3rem 3rem 3rem;
+        @extend %placeholder--card;
+        .placeholder-glow[class *= "card-title"]{
+            text-align: center;
+            span{
+                height: 3rem;
+            }
+        }
+        .placeholder-glow[class *= "card-text"]{
+            text-align: center;
+            span{
+                height: 1.5rem;
+                margin: 2rem 0;
+            }
+        }
     }
     .commodity__container {
         .commodity--img{
@@ -369,3 +379,24 @@ $bg-path: (
     }
 }
 // Featured Products
+.featured__section{
+    @extend %placeholder;
+    &--header{
+        @extend %placeholder--header;
+    }
+    .card{
+        @extend %placeholder--card;
+        .card-body{
+            .card-text, .card-title{
+                text-align: center;
+            }
+            .card-text{
+                margin-top: 2rem;
+                span{
+                    display: inline-block;
+                    margin: .5rem 0;
+                }
+            }
+        }
+    }
+}
