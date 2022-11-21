@@ -163,7 +163,8 @@
 }
 
 .slider .carousel-item {
-  padding: 5vh 3vh;
+  padding: 2rem 3rem;
+  margin: 6rem 0;
   box-sizing: border-box;
 }
 .slider .carousel-item .slider__heading4 {
@@ -362,7 +363,7 @@ ul {
 .latest__goods {
   width: 90%;
   margin: 0 auto;
-  margin-top: 4rem;
+  margin-top: 8rem;
   margin-bottom: 4rem;
   display: flex;
   flex-direction: column;
@@ -541,7 +542,7 @@ ul {
 }
 
 .new__arrivals {
-  padding: 4rem 0 6rem 0;
+  padding: 4rem 0 3rem 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -660,4 +661,143 @@ ul {
 }
 .new__arrivals .commodity__container[class*=brown__sale]::after {
   background: #d8924c;
+}
+
+.table__collection {
+  padding: 6rem 5%;
+  margin: 2rem 0 4rem;
+  position: relative;
+}
+.table__collection .BGimage__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: url("../image/table collection image/first image.jpg");
+}
+.table__collection .table__collection__BGcolor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  max-width: 500px;
+  background: rgba(25, 25, 26, 0.7411764706);
+  z-index: -1;
+}
+.table__collection .table__collection__data .data--header {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  color: #f2f2f2;
+}
+.table__collection .table__collection__data .data--prag {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #e6e6e6;
+}
+.table__collection .table__collection__data .data--header, .table__collection .table__collection__data .data--prag {
+  text-transform: capitalize;
+  margin-bottom: 4rem;
+}
+.table__collection .table__collection__data .data--price {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #e6e6e6;
+  letter-spacing: 1.3px;
+}
+.table__collection .table__collection__data .data--price .text--orange {
+  color: #E99C2E;
+}
+.table__collection .table__collection__data .data--rdm button {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  padding: 1rem 3rem;
+  background: #E99C2E;
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: #e6e6e6;
+}
+@media (min-width: 800px) {
+  .table__collection .table__collection__data .data--prag {
+    width: 60%;
+    max-width: 400px;
+    margin: 4rem 0 2rem;
+    line-height: 1.6rem;
+  }
+  .table__collection .table__collection__data .data--price {
+    margin: 2rem 0;
+  }
+}
+
+.image__num1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../image/table collection image/first image.jpg");
+  width: 100%;
+  height: 20%;
+  border: 2px solid black;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.image__num2 {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  background: url("../image/table collection image/second image.png");
+  width: 100%;
+  height: 20%;
+  border: 2px solid black;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.image__num3 {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  background: url("../image/table collection image/third image.jpg");
+  width: 100%;
+  height: 20%;
+  border: 2px solid black;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.image__num4 {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  background: url("../image/table collection image/fourth image.jpg");
+  width: 100%;
+  height: 20%;
+  border: 2px solid black;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.image__num5 {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  background: url("../image/table collection image/fifth image.png");
+  width: 100%;
+  height: 20%;
+  border: 2px solid black;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }

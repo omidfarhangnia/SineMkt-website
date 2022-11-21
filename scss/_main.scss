@@ -1,4 +1,5 @@
 @use "sass:selector";
+@use "sass:list";
 // latest design
 $light-gray: #a09e9c;
 $dark-gray: #616060;
@@ -6,7 +7,7 @@ $dark-gray: #616060;
     width: 90%;
     margin: 0 auto;
     margin: {
-        top: 4rem;
+        top: 8rem;
         bottom: 4rem;
     };
     display: flex;
@@ -168,7 +169,7 @@ $dark-gray: #616060;
     }
 }
 .new__arrivals{
-    padding: 4rem 0 6rem 0;
+    padding: 4rem 0 3rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -277,3 +278,94 @@ $dark-gray: #616060;
         background: #d8924c;
     }
 }
+// table connection section
+.table__collection{
+    padding: 6rem 5%;
+    margin: 2rem 0 4rem;
+    position: relative;
+    .BGimage__container{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        z-index: -2;
+        background: url("../image/table\ collection\ image/first image.jpg");
+    }
+    .table__collection__BGcolor{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        max-width: 500px;
+        background: #19191abd;
+        z-index: -1;
+    }
+    .table__collection__data{
+        .data--header{
+            @include font-data(500, 2rem, darken(#ffffff, 5%));
+        }
+        .data--prag{
+            @include font-data(400, 1rem, darken(#ffffff, 10%));
+        }
+        .data--header, .data--prag{
+            text-transform: capitalize;
+            margin-bottom: 4rem;
+        }
+        .data--price{
+            @include font-data(700, 1.2rem, darken(#ffffff, 10%));
+            letter-spacing: 1.3px;
+            .text--orange{
+                color: #E99C2E;
+            }
+        }
+        .data--rdm{
+            button{
+                @include reset-button(); 
+                padding: 1rem 3rem;
+                background: #E99C2E;
+                @include font-data(300, 1.5rem, darken(#ffffff, 10%));
+            }
+        }
+    }
+    @media (min-width: 800px) {
+        .table__collection__data{
+            .data--prag{
+                width: 60%;
+                max-width: 400px;
+                margin: 4rem 0 2rem;
+                line-height: 1.6rem;
+            }
+            .data--price{
+                margin: 2rem 0;
+            }
+        }
+    }
+}
+$bg-path: (
+    1: "../image/table\ collection\ image/first image.jpg",
+    2: "../image/table\ collection\ image/second image.png",
+    3: "../image/table\ collection\ image/third image.jpg",
+    4: "../image/table\ collection\ image/fourth image.jpg",
+    5: "../image/table\ collection\ image/fifth image.png"
+);
+@each $num, $path in $bg-path{
+    .image__num#{$num}{
+        position: absolute;
+        @if($num != 1){
+            top: ($num - 1) * 20%;
+        }@else{
+            top: 0;
+        }
+        left: 0;
+        background: url($path);
+        width: 100%;
+        height: 20%;
+        border: 2px solid black;
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+}
+// Featured Products

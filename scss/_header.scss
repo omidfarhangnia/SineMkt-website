@@ -160,7 +160,8 @@ $orange-color: #e99c2e;
 // slider style
 .slider{
     .carousel-item{
-        padding: 5vh 3vh;
+        padding: 2rem 3rem;
+        margin: 6rem 0;
         box-sizing: border-box;
         .slider__heading4{
             @include font-data(500, 2rem, #998d80);
