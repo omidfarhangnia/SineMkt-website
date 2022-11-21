@@ -156,7 +156,7 @@ $dark-gray: #616060;
     }
 }
 %placeholder {
-    padding: 4rem 0 3rem 0;
+    padding: 2rem 0 3rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -164,7 +164,7 @@ $dark-gray: #616060;
 %placeholder--header{
     @include font-data(600, 2.8rem, #5f5b57);
     text-align: center;
-    margin: 4rem 0;
+    margin: 6rem 0 1rem;
     width: 100%;
     text-transform: capitalize;
 }
@@ -174,23 +174,25 @@ $dark-gray: #616060;
     margin: 0 3rem 3rem 3rem;
 }
 .new__arrivals{
-    @extend %placeholder;
     &--header{
         @extend %placeholder--header;
     }
-    .card, .commodity__container {
-        @extend %placeholder--card;
-        .placeholder-glow[class *= "card-title"]{
-            text-align: center;
-            span{
-                height: 3rem;
+    .new__arrivals__cards__container{
+        @extend %placeholder;
+        .card, .commodity__container {
+            @extend %placeholder--card;
+            .placeholder-glow[class *= "card-title"]{
+                text-align: center;
+                span{
+                    height: 3rem;
+                }
             }
-        }
-        .placeholder-glow[class *= "card-text"]{
-            text-align: center;
-            span{
-                height: 1.5rem;
-                margin: 2rem 0;
+            .placeholder-glow[class *= "card-text"]{
+                text-align: center;
+                span{
+                    height: 1.5rem;
+                    margin: 2rem 0;
+                }
             }
         }
     }
@@ -380,22 +382,74 @@ $bg-path: (
 }
 // Featured Products
 .featured__section{
-    @extend %placeholder;
     &--header{
         @extend %placeholder--header;
     }
-    .card{
-        @extend %placeholder--card;
-        .card-body{
-            .card-text, .card-title{
-                text-align: center;
-            }
-            .card-text{
-                margin-top: 2rem;
-                span{
-                    display: inline-block;
-                    margin: .5rem 0;
+    .featured__product__cards__container{
+        @extend %placeholder;
+        gap: 4rem;
+        .card{
+            @extend %placeholder--card;
+            .card-body{
+                .card-text, .card-title{
+                    text-align: center;
                 }
+                .card-text{
+                    margin-top: 2rem;
+                    span{
+                        display: inline-block;
+                        margin: .5rem 0;
+                    }
+                }
+            }
+        }
+        .featured__product__card{
+            width: 80%;
+            max-width: 300px;
+            border-radius: 2rem 2rem 0 0;
+            .card--image{
+                width: 90%;
+                margin: 5%;
+                img{
+                    width: 100%;
+                    border-radius: 1rem 1rem 0 0;
+                }
+            }
+            .card--rank{
+                user-select: none;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                align-items: center;
+                margin: 2rem 0 1rem;
+                .rank--stars{
+                    color: #efce4a;
+                    translate: 0 -2px;
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+                .rank--reviews{
+                    @include font-data(400, 1rem, #5f5b57);
+                    text-transform: capitalize;
+                }
+            }
+            .card--header{
+                text-transform: capitalize;
+                text-align: center;
+                a{
+                    @include font-data(500, 1.2rem, darken(#5f5b57, 20%));
+                    text-decoration: none;
+                    &:hover{
+                        border-bottom: 2px solid darken(#5f5b57, 20%);
+                    }
+                }
+            }
+            .card--price{
+                margin-top: 1rem;
+                @include font-data(500, 1.2rem, darken(#5f5b57, 20%));
+                text-align: center;
             }
         }
     }
