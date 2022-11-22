@@ -1,0 +1,23 @@
+[
+    {
+        "title": "why brands are looking at local language",
+        "written": "Nicholas Alexander",
+        "data": "18th March 2015",
+        "text_demo": "Pellentesque in ipsum id orci porta dapibus. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vivamus suscipit tortor eget felis porttitor volutpat...",
+        "image_path": "./image/latest blog/local-language.jpg"
+    },
+    {
+        "title": "why brands are looking at advertising",
+        "written": "Stephen Bates",
+        "data": "20th October 2009",
+        "text_demo": "Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim...",
+        "image_path": "./image/latest blog/advertising.jpg"
+    },
+    {
+        "title": "why brands are trying to have activity in social medias",
+        "written": "Jean Kendrick",
+        "data": "1th January 2022",
+        "text_demo": "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta...",
+        "image_path": "./image/latest blog/social-media.jpg"
+    }
+]
