@@ -18,7 +18,8 @@ const PAGE_OFFCANVAS = document.querySelector(".page_offcanvas");
 // adding data to page as element
 const NEW__ARRIVALS__CARDS__CONTAINER = document.querySelector(".new__arrivals__cards__container");
 const FEATURED__PRODUCT__CARDS__CONTAINER = document.querySelector(".featured__product__cards__container");
-
+// nav bar
+const PAGE__NAV = document.querySelector("#nav");
 // adding offcanvas script
 BURGER_MENU.addEventListener("click", () => {
     offcanvas_changes("open")
@@ -88,7 +89,6 @@ function showFeaturedProductsResult(data){
     }
     FEATURED__PRODUCT__CARDS__CONTAINER.innerHTML = result;
 }
-
 function giveStarts(starts_num){
     let result = ``;
     for(var i = 0; i < starts_num; i++){
@@ -111,3 +111,12 @@ function giveStarts(starts_num){
     }
     return result;
 }
+
+// script for navbar style
+window.addEventListener("scroll", () => {
+    if(window.scrollY != 0){
+        PAGE__NAV.classList.add("active_nav");
+    }else{
+        PAGE__NAV.classList.remove("active_nav");
+    }
+})

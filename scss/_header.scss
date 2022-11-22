@@ -12,10 +12,11 @@ $orange-color: #e99c2e;
         justify-content: space-around;
         align-items: center;
         padding: 1.5rem;
-        position: sticky;
+        position: fixed;
         top: 0;
         width: 100%;
         z-index: 1;
+        transition: .2s;
         .burger_menu{
             display: inline-flex;
             width: 4rem;
@@ -156,12 +157,17 @@ $orange-color: #e99c2e;
             }
         }
     }
+    .active_nav{
+        background: #ffffff;
+        padding: 2rem 1.5rem;
+        z-index: 3;
+    }
 }
 // slider style
 .slider{
     .carousel-item{
         padding: 2rem 3rem;
-        margin: 6rem 0;
+        margin: 12rem 0 4rem;
         box-sizing: border-box;
         .slider__heading4{
             @include font-data(500, 2rem, #998d80);
