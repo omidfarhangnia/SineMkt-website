@@ -126,7 +126,7 @@ function showLatestBlogResult(data){
             <div class="blog__image">
                 <img src="${member.image_path}" alt="">
             </div>
-            <h5 class="blog__header">${member.title}</h5>
+            <h5 class="blog__header"><a href="${member.page_link}">${member.title}</a></h5>
             <p class="blog__data">
                 <span class="blog__data--written">${member.written}</span> / <span class="blog__data--data">${member.data}</span>
             </p>
