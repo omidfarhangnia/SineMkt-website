@@ -11,6 +11,12 @@ fetch("https://raw.githubusercontent.com/omidfarhangnia/SineMkt-website/main/js/
 .then(data => {
     showFeaturedProductsResult(data);
 })
+// latest blog
+fetch("https://raw.githubusercontent.com/omidfarhangnia/SineMkt-website/main/js/data/latest_blog.json")
+.then(response => response.json())
+.then(data => {
+    showLatestBlogResult(data)
+})
 // adding offcanvas elements
 const BURGER_MENU = document.querySelector(".burger_menu");
 const EXIT_OFFCANVAS = document.querySelector(".page_offcanvas");
@@ -18,6 +24,7 @@ const PAGE_OFFCANVAS = document.querySelector(".page_offcanvas");
 // adding data to page as element
 const NEW__ARRIVALS__CARDS__CONTAINER = document.querySelector(".new__arrivals__cards__container");
 const FEATURED__PRODUCT__CARDS__CONTAINER = document.querySelector(".featured__product__cards__container");
+const LATEST__BLOG__CARDS__CONTAINER = document.querySelector(".latest__blog__cards__container");
 // nav bar
 const PAGE__NAV = document.querySelector("#nav");
 // adding offcanvas script
@@ -111,7 +118,24 @@ function giveStarts(starts_num){
     }
     return result;
 }
-
+function showLatestBlogResult(data){
+    let result = ``;
+    for(member of data){
+        result += `
+        <div class="latest__blog__card"> 
+            <div class="blog__image">
+                <img src="${member.image_path}" alt="">
+            </div>
+            <h5 class="blog__header">${member.title}</h5>
+            <p class="blog__data">
+                <span class="blog__data--written">${member.written}</span> / <span class="blog__data--data">${member.data}</span>
+            </p>
+            <p class="blog__text__demo">${member.text_demo.slice(0, 170)}...</p>
+        </div>
+        `;
+    }
+    LATEST__BLOG__CARDS__CONTAINER.innerHTML = result;
+}
 // script for navbar style
 window.addEventListener("scroll", () => {
     if(window.scrollY != 0){
