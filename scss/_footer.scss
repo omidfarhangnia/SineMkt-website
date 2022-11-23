@@ -1,6 +1,6 @@
 // auxiliary link section
 .auxiliary__link__section{
-    margin-top: 300px;
+    margin-top: 4rem;
     width: 100%;
     padding: 3rem 0;
     display: flex;
@@ -73,5 +73,41 @@
                 }
             }
         }
+    }
+}
+// footer style
+.footer{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem 0;
+    background: #f8f9fd;
+    align-items: center;
+    .footer__nav{
+        margin-bottom: 2rem;
+        ul{
+            display: flex;
+            gap: 2rem;
+            li{
+                list-style: none;
+                padding: 0;
+                a{
+                    color: #616060;
+                    transition: .5s;
+                    svg{
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                    &:hover{
+                        color: #ff9500;
+                    }
+                }
+            }
+        }
+    }
+    .footer__copyright{
+        @include font-data(400, 1rem, #616060);
+        text-transform: capitalize;
     }
 }

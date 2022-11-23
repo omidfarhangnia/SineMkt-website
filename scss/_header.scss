@@ -305,3 +305,20 @@ $carousel-element: "slider__heading4", "slider__heading2", "slider__introduction
         opacity: 1;
     }
 }
+
+.rise__handler{
+    width: 3rem;
+    height: 3rem;
+    background: black;
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    user-select: none;
+    span{
+        margin-top: .3rem;
+        @include font-data(400, 2rem, #ffffff);
+    }
+}

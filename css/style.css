@@ -366,6 +366,26 @@ ul {
     opacity: 1;
   }
 }
+.rise__handler {
+  width: 3rem;
+  height: 3rem;
+  background: black;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  user-select: none;
+}
+.rise__handler span {
+  margin-top: 0.3rem;
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
 .latest__goods {
   width: 90%;
   margin: 0 auto;
@@ -977,7 +997,7 @@ ul {
   }
 }
 .auxiliary__link__section {
-  margin-top: 300px;
+  margin-top: 4rem;
   width: 100%;
   padding: 3rem 0;
   display: flex;
@@ -1064,4 +1084,43 @@ ul {
 .auxiliary__link__section div .input__container .send__button svg {
   width: 80%;
   height: 80%;
+}
+
+.footer {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem 0;
+  background: #f8f9fd;
+  align-items: center;
+}
+.footer .footer__nav {
+  margin-bottom: 2rem;
+}
+.footer .footer__nav ul {
+  display: flex;
+  gap: 2rem;
+}
+.footer .footer__nav ul li {
+  list-style: none;
+  padding: 0;
+}
+.footer .footer__nav ul li a {
+  color: #616060;
+  transition: 0.5s;
+}
+.footer .footer__nav ul li a svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.footer .footer__nav ul li a:hover {
+  color: #ff9500;
+}
+.footer .footer__copyright {
+  font-family: "roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #616060;
+  text-transform: capitalize;
 }
