@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js" defer></script>
+    <script src="./js/infinite-scrollbar.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -65,7 +66,7 @@
                 </ul>
             </div>
         </nav>
-        <section class="slider">
+        <!-- <section class="slider">
             <div id="page__slider" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#page__slider" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
@@ -129,10 +130,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </header>
     <main class="main">
-        <section class="latest__goods">
+        <!-- <section class="latest__goods">
             <div class="latest__goods--boxes">
                 <img class="boxes__image" src="./image/latest goods/arm-chair-latest.png" alt="">
                 <a href="#"><h4 class="boxes--headers">arm chair</h4></a>
@@ -308,7 +309,7 @@
                 <p class="data--prag">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat voluptatum assumenda quia autem est dolor debitis optio? Vitae voluptatum eius, ducimus blanditiis pariatur possimus necessitatibus ipsum eos recusandae porro voluptate corporis inventore illo soluta atque ipsam, odio ullam consequatur accusantium.
                 </p>
-                <p class="data--price">starting from <span class="text--orange">$ 299</span></p>
+                <p class="data--price">starting from <span class="text--orange">$ 299.00</span></p>
                 <a class="data--rdm">
                     <button>view more</button>
                 </a>
@@ -477,7 +478,54 @@
               </div>
             </div>
           </div>
-        </section>  
+        </section>
+        <section class="infinite__scrollbar">
+          <div class="image__container">
+          </div>
+        </section> -->
+        <section class="auxiliary__link__section">
+            <div>
+              <h5 class="links__header">Information</h5>
+              <ul class="links__container">
+                <li><a href="#" class="links">about us</a></li>
+                <li><a href="#" class="links">contact us</a></li>
+                <li><a href="#" class="links">news</a></li>
+                <li><a href="#" class="links">store</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="links__header">collections</h5>
+              <ul class="links__container">
+                <li><a href="#" class="links">wooden chair</a></li>
+                <li><a href="#" class="links">royal cloth sofa</a></li>
+                <li><a href="#" class="links">accent chair</a></li>
+                <li><a href="#" class="links">bed</a></li>
+                <li><a href="#" class="links">hadnging lamp</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="links__header">my accounts</h5>
+              <ul class="links__container">
+                <li><a href="#" class="links">my account</a></li>
+                <li><a href="#" class="links">wishlist</a></li>
+                <li><a href="#" class="links">community</a></li>
+                <li><a href="#" class="links">order history</a></li>
+                <li><a href="#" class="links">my cart</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="links__header">newsletter</h5>
+              <p class="link__text">Subscribe to get latest news,update and information.</p>
+              <div class="input__container">
+                <button class="send__button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"/>
+                  </svg>
+                </button>
+                <input type="text" class="link__input" id="email__input" placeholder="Enter Email Here...">
+              </div>
+            </div>
+        </section>
     </main>
     <footer>
     </footer>
