@@ -518,17 +518,36 @@ $bg-path: (
         }
     }
 }
+.infinite__scrollbar{
+    background: #f8f9fd;
+    .image__container{
+        position: relative;
+        height: 20vh;
+        margin-bottom: 5rem;
+        overflow: hidden;
+        span{
+            position: absolute;
+            top: 10%;
+            width: 30%;
+            height: 80%;
+            display: inline-block;
+            user-select: none;
+            animation: span_animation 10s both linear;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                max-width: 160px;
+            }
 
-// <div class="latest__blog__card">
-//   <div class="blog__image">
-//     <img src="" alt="">
-//   </div>
-//   <h5 class="blog__header"></h5>
-//   <p class="blog__data">
-//     <span class="blog__data--written"></span> / <span class="blog__data--data"></span>
-//   </p>
-//   <p class="blog__text__demo">
-
-//   </p>
-// </div>
-// Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum lorem ipsum dollor hena porta...
+        }
+    }
+}
+@keyframes span_animation {
+    0%{
+        left: -30%;
+    }
+    100%{
+        left: 130%;
+    }
+}

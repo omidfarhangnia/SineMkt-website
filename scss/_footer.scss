@@ -1,0 +1,77 @@
+// auxiliary link section
+.auxiliary__link__section{
+    margin-top: 300px;
+    width: 100%;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    div{
+        margin-bottom: 5rem;
+        width: 21%;
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        .links__header{
+            @include font-data(500, 1.5rem, #5f5b57);
+            margin-bottom: 4rem;
+        }
+        .links__container{
+            list-style-type: none;
+            padding: 0;
+            .links{
+                @include font-data(400, 1.2rem, lighten(#5f5b57, 20%));
+                padding: {
+                    top: .5rem;
+                    right: .5rem;
+                    bottom: .5rem;
+                }
+                text-decoration: none;
+                transition: .5s;
+                &:hover{
+                    margin-left: 20px;
+                    color: #5f5b57;
+                }
+            }
+            li:not(:last-child){
+                margin-bottom: 1.5rem;
+            }
+        }
+        .link__text{
+            @include font-data(400, 1.2rem, lighten(#5f5b57, 20%));
+            margin-bottom: 2rem;
+        }
+        .input__container{
+            width: 100%;
+            position: relative;
+            .link__input{
+                border: 0;
+                width: 80%;
+                box-shadow: 0 6px 14px lighten(#5f5b57, 20%);
+                @include font-data(400, 1.2rem, #5f5b57);
+                padding: .6rem 1.2rem;
+                border-radius: 5px;
+                &:focus{
+                    outline: 0;
+                }
+            }
+            .send__button{
+                @include reset-button();
+                width: 15%;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: grid;
+                place-items: center;
+                background-color: #ff9500;
+                border-radius: 30px 0;
+                color: #5f5b57;
+                svg{
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+        }
+    }
+}
